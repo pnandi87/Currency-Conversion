@@ -1,0 +1,32 @@
+apiVersion: apps/v1 
+kind: Deployment    
+metadata: 
+  labels:
+    app: conversionservice
+    version: v1             
+  name: conversionservice
+spec:                
+  selector:         
+    matchLabels:
+      app: conversionservice
+      version: v1  
+  replicas: 1      
+  template:
+    metadata:
+      labels:        
+        app: conversionservice
+        version: v1
+    spec:
+      containers:
+        - 
+          image: "pnandi87/conversionservicek8sv05:8"
+          imagePullPolicy: IfNotPresent
+          name: conversionservice
+          ports:
+          - name: httpport 
+            containerPort: 8100 
+            hostPort: 8100     
+          
+          env:
+            - name: conversionservice.eureka.url
+              value: "http://eureka:8761/eureka"                        
