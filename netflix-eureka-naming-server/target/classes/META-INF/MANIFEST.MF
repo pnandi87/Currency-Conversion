@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: netflix-eureka-naming-server
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: w2cluster617
+Implementation-Vendor-Id: com.java.microservices
+Build-Jdk: 1.8.0_161
+Implementation-URL: https://spring.io/projects/spring-boot/netflix-eur
+ eka-naming-server
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

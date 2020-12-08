@@ -1,0 +1,33 @@
+apiVersion: apps/v1 
+kind: Deployment    
+metadata: 
+  labels:
+    app: eureka
+    version: v1             
+  name: eureka
+spec:                
+  selector:         
+    matchLabels:
+      app: eureka
+      version: v1  
+  replicas: 1      
+  template:
+    metadata:
+      labels:        
+        app: eureka
+        version: v1
+    spec:
+      containers:
+        - name: eureka
+          image: "pnandi87/eurekak8sv02:4"
+          imagePullPolicy: IfNotPresent
+          name: eureka
+          ports:
+#            - containerPort: 8761      
+          - name: httpport
+            containerPort: 8761
+            hostPort: 8761   
+            
+         
+            
+          
