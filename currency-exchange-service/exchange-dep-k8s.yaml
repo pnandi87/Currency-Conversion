@@ -1,0 +1,34 @@
+apiVersion: apps/v1 
+kind: Deployment    
+metadata: 
+  labels:
+    app: exchangeservice
+    version: v1             
+  name: exchangeservice
+spec:                
+  selector:         
+    matchLabels:
+      app: exchangeservice
+      version: v1  
+  replicas: 1      
+  template:
+    metadata:
+      labels:        
+        app: exchangeservice
+        version: v1
+    spec:
+      containers:
+        -
+          image: "pnandi87/exchangeservicek8sv03:6"
+          imagePullPolicy: IfNotPresent
+          name: exchangeservice
+          ports:
+          - name: httpport 
+            containerPort: 8000 
+#            hostport: 8000      
+              
+          env:
+#            - name: exchangeservice.configserverurl
+#              value: "http://configserver:8888"
+            - name: exchangeservice.eureka.url
+              value: "http://eureka:8761/eureka"           
