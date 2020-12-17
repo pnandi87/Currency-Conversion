@@ -1,2 +1,2 @@
-#exchange.datasource.platform: "h2"
+exchange.datasource.platform: "h2"
 exchange.datasource.url: "jdbc:h2:mem:currencyDB;DB_CLOSE_DELAY=-1"
